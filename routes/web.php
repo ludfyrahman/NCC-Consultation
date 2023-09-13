@@ -1,3 +1,4 @@
+
 <?php
 
 use App\Http\Controllers\BackOffice\AbsensiController;
@@ -5,21 +6,10 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BackOffice\DashboardController;
 use App\Http\Controllers\BackOffice\UserController;
-use App\Http\Controllers\BackOffice\EmployeController;
-use App\Http\Controllers\BackOffice\CustomerController;
-use App\Http\Controllers\BackOffice\SupplierController;
-use App\Http\Controllers\BackOffice\ProductController;
-use App\Http\Controllers\BackOffice\ProfileCompanyController;
-use App\Http\Controllers\BackOffice\ServiceController;
-use App\Http\Controllers\BackOffice\UnitController;
-use App\Http\Controllers\BackOffice\TypeController;
-use App\Http\Controllers\BackOffice\SaleController;
-use App\Http\Controllers\BackOffice\PurchaseController;
-use App\Http\Controllers\BackOffice\SosmedController;
-use App\Http\Controllers\BackOffice\VoucherController;
-use App\Http\Controllers\BackOffice\StokController;
-use App\Http\Controllers\BackOffice\FinanceController;
-use App\Http\Controllers\BackOffice\AttendanceController;
+use App\Http\Controllers\BackOffice\CategoryController;
+use App\Http\Controllers\BackOffice\RecipeCategoryController;
+use App\Http\Controllers\BackOffice\ArticleController;
+use App\Http\Controllers\BackOffice\RecipeController;
 use App\Http\Controllers\SiteController;
 use App\Models\Voucher;
 
@@ -33,51 +23,25 @@ use App\Models\Voucher;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
 Route::get('/', [SiteController::class, 'index'])->name('home');
+Route::get('/resep', [SiteController::class, 'recipe'])->name('resep');
+Route::get('/resep/{id}', [SiteController::class, 'recipeDetail'])->name('resep.detail');
+Route::get('/artikel', [SiteController::class, 'article'])->name('artikel');
+Route::get('/artikel/{id}', [SiteController::class, 'articleDetail'])->name('artikel.detail');
+Route::get('/konsultasi', [SiteController::class, 'consultation'])->name('konsultasi');
+Route::get('/tentang', [SiteController::class, 'about'])->name('tentang');
+Route::get('/createReservation', [SiteController::class, 'createReservation'])->name('createReservation');
+Route::post('/reservation', [SiteController::class, 'reservation'])->name('reservation');
+// Route::get('/programs', [SiteController::class, 'programs'])->name('programs');
+// Route::get('/teacher', [SiteController::class, 'teachers'])->name('teachers');
+// Route::get('/works', [SiteController::class, 'works'])->name('works');
 Route::middleware(['auth',  'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/profil', [UserController::class, 'profile'])->name('profile');
     Route::post('/profil', [UserController::class, 'updateProfile']);
     Route::resource('user', UserController::class);
-    /**
-     * sale block
-     */
-    Route::resource('sale', SaleController::class);
-    Route::get('destroyDetail/{id}', [SaleController::class, 'destroyDetail'])->name('destroyDetail');
-    Route::post('submitOrder', [SaleController::class, 'submitOrder'])->name('submitOrder');
-    /**
-     * end sale block
-     */
-
-     /**
-     * purchase block
-     */
-    Route::resource('purchase', PurchaseController::class);
-    Route::get('destroyDetailPurchase/{id}', [PurchaseController::class, 'destroyDetail'])->name('destroyDetailPurchase');
-    Route::post('submitPurchase', [PurchaseController::class, 'submitPurchase'])->name('submitPurchase');
-    /**
-     * end purchase block
-     */
-    Route::resource('employe', EmployeController::class);
-    Route::resource('product', ProductController::class);
-    Route::resource('service', ServiceController::class);
-    Route::resource('supplier', SupplierController::class);
-    Route::resource('unit', UnitController::class);
-    Route::resource('customer', CustomerController::class);
-    Route::resource('type', TypeController::class);
-    Route::resource('profile', ProfileCompanyController::class);
-    Route::resource('unit', UnitController::class);
-    Route::resource('voucher', VoucherController::class);
-    Route::resource('kehadiran', AbsensiController::class);
-    Route::resource('sosmed', SosmedController::class);
-
-
-    Route::prefix('report')->group(function () {
-        Route::resource('stok', StokController::class);
-        Route::resource('finance', FinanceController::class);
-        Route::resource('attendance', AttendanceController::class);
-        // Route::get('finance', [FinanceController::class, 'filter']);
-    });
+    Route::resource('category', CategoryController::class);
+    Route::resource('article', ArticleController::class);
+    Route::resource('recipe_category', RecipeCategoryController::class);
+    Route::resource('recipe', RecipeController::class);
 });

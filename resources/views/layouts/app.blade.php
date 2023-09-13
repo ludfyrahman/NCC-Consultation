@@ -12,13 +12,14 @@
         content="admin,admin dashboard,admin dashboard template,admin panel template,admin template,admin theme,bootstrap 4 admin template,bootstrap 4 dashboard,bootstrap admin,bootstrap admin dashboard,bootstrap admin panel,bootstrap admin template,bootstrap admin theme,bootstrap dashboard,bootstrap form template,bootstrap panel,bootstrap ui kit,dashboard bootstrap 4,dashboard design,dashboard html,dashboard template,dashboard ui kit,envato templates,flat ui,html,html and css templates,html dashboard template,html5,jquery html,premium,premium quality,sidebar bootstrap 4,template admin bootstrap 4" />
 
     <!-- Title -->
-    <title> Aplikasi POS - Pos Ita Solusi </title>
+    <title> BACKEND | APP </title>
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('assets/img/brand/favicon.png') }}" type="image/x-icon" />
 
     <!-- Internal Select2 css -->
-		<link href="{{asset('assets/plugins/select2/css/select2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/plugins/select2/css/select2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/plugins/sumoselect/sumoselect.css')}}" rel="stylesheet">
     <!-- Icons css -->
     <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet">
 
@@ -169,6 +170,7 @@
 
 <!-- Internal Select2.min js -->
 <script src="{{ asset('assets/plugins/select2/js/select2.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/sumoselect/jquery.sumoselect.js') }}"></script>
 
 <!--Internal  Datatable js -->
 <script src="{{ asset('assets/js/table-data.js') }}"></script>
@@ -188,6 +190,7 @@
 <!--Internal Fileuploads js-->
 <script src="{{ asset('assets/plugins/fileuploads/js/fileupload.js') }}"></script>
 <script src="{{ asset('assets/plugins/fileuploads/js/file-upload.js') }}"></script>
+<script src="{{ asset('assets/plugins/jquery-steps/jquery.steps.min.js') }}"></script>
 
 <!-- Internal Form-editor js -->
 <script src="{{ asset('assets/js/form-editor.js') }}"></script>
@@ -198,9 +201,10 @@
 <script src="{{ asset('assets/plugins/jquery.maskedinput/jquery.maskedinput.js') }}"></script>
 <!-- custom js -->
 <script src="{{ asset('assets/js/custom.js') }}"></script>
+<script src="{{ asset('assets/js/form-wizard.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.vmap.sampledata.js') }}"></script>
 <script>
-
+    $('.testselect2').SumoSelect();
 const formatRupiah = (number)=>{
     return new Intl.NumberFormat("id-ID", {
       style: "currency",

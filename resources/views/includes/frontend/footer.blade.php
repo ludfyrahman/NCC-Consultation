@@ -1,93 +1,99 @@
-<!-- Start Footer Area  -->
-<footer class="eduvibe-footer-one edu-footer footer-style-default">
+<footer id="footer" class="footer ">
+
     <div class="footer-top">
-        <div class="container eduvibe-animated-shape">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                    <div class="edu-footer-widget">
-                        <div class="logo">
-                            <a href="#">
-                                <img class="logo-light" src="{{ asset($profiles->light_logo) }}" alt="Site Logo">
-                            </a>
-                        </div>
-                        <p class="description">{{ $profiles->deskripsi }}</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer">
+                        <h2>About Us</h2>
+                        <p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut
+                            labore dolore magna.</p>
+
+                        <ul class="social">
+                            <li><a href="#"><i class="icofont-facebook"></i></a></li>
+                            <li><a href="#"><i class="icofont-google-plus"></i></a></li>
+                            <li><a href="#"><i class="icofont-twitter"></i></a></li>
+                            <li><a href="#"><i class="icofont-vimeo"></i></a></li>
+                            <li><a href="#"><i class="icofont-pinterest"></i></a></li>
+                        </ul>
+
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="edu-footer-widget explore-widget">
-                        <h5 class="widget-title">Social Media</h5>
-                        <div class="inner">
-                            <ul class="footer-link link-hover">
-                                @foreach ($social as $soc)
-                                    <li><a target="_blank" href="{{ url($soc->link) }}"><i
-                                                class="icon-Double-arrow"></i>{{ $soc->nama_akun }}</a></li>
-                                @endforeach
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="edu-footer-widget quick-link-widget">
-                        <h5 class="widget-title">Produk</h5>
-                        <div class="inner">
-                            <ul class="footer-link link-hover">
-                                @php
-                                    $i = 0;
-                                @endphp
-                                @foreach ($products as $product)
-                                    @if ($i <= 5)
-                                        <li><a href="#"><i class="icon-Double-arrow"></i>{{ $product->nama }}</a>
-                                        </li>
-                                        @php
-                                            $i++;
-                                        @endphp
-                                    @endif
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="edu-footer-widget">
-                        <h5 class="widget-title">Contact Info</h5>
-                        <div class="inner">
-                            <div class="widget-information">
-                                <ul class="information-list">
-                                    <li><i class="icon-map-pin-line"></i>{{ $profiles->address }}</li>
-                                    <li><i class="icon-phone-fill"></i><a
-                                            href="tel:{{ $profiles->phone }}">{{ $profiles->phone }}</a></li>
-                                    <li><i class="icon-mail-line-2"></i><a target="_blank"
-                                            href="mailto:yourmailaddress@example.com">{{ $profiles->email }}</a></li>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer f-link">
+                        <h2>Quick Links</h2>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our
+                                            Cases</a></li>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Other
+                                            Links</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-caret-right"
+                                                aria-hidden="true"></i>Consuling</a></li>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Finance</a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-caret-right"
+                                                aria-hidden="true"></i>Testimonials</a></li>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a></li>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact
+                                            Us</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="shape-dot-wrapper shape-wrapper d-md-block d-none">
-                <div class="shape-image shape-image-1">
-                    <img src="{{ asset('frontend/images/shapes/shape-21-01.png') }}" alt="Shape Thumb" />
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer">
+                        <h2>Open Hours</h2>
+                        <p>Lorem ipsum dolor sit ame consectetur adipisicing elit do eiusmod tempor incididunt.</p>
+                        <ul class="time-sidual">
+                            <li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
+                            <li class="day">Saturday <span>9.00-18.30</span></li>
+                            <li class="day">Monday - Thusday <span>9.00-15.00</span></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="shape-image shape-image-2">
-                    <img src="{{ asset('frontend/images/shapes/shape-35.png') }}" alt="Shape Thumb" />
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="copyright-area copyright-default">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="inner text-center">
-                        <p>Copyright {{ date('Y') }} <a href="#">POS ITA SOLUSI</a> . All Rights Reserved</p>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer">
+                        <h2>Newsletter</h2>
+                        <p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit
+                            amet, consectetur adipisicing elit,</p>
+                        <form action="https://wpthemesgrid.com/themes/mediplus/mail/mail.php" method="get"
+                            class="newsletter-inner">
+                            <input name="email" placeholder="Email Address" class="common-input"
+                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'"
+                                required type="email">
+                            <button class="button"><i class="icofont icofont-paper-plane"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="copyright-content">
+                        <p>Designed and Developed by<a href="https://wpthemesgrid.com/" rel="nofollow"
+                                target="_blank">CC</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </footer>

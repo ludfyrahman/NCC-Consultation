@@ -15,17 +15,20 @@ class ProfilSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('profil')->insert([
-            'nama_perusahaan' => 'CV. ITA SOLUSI',
-            'logo' => '-',
-            'deskripsi' => '-',
-            'about' => '-',
-            'light_logo' => '-',
-            'address' => '-',
-            'phone' => '-',
-            'email' => '-',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
+        DB::table('school_profile')->insert([
+            'name' => 'SMK PGRI 2 BONDOWOSO',
+            'address' => 'Jl. Saliwiryo Pranowo Gg. TamanNo. 25',
+            'description' => '-',
+            'email' => 'smkpgri2.bondowoso@gmail.com',
+            'facebook' => '-',
+            'instagram' => '-',
+            'twitter' => '-',
+            'phone' => '0',
+            'logo' => '',
+            'white_logo' => '',
+            'intro' => '',
+            'visi' => '',
+            'misi' => '',
         ]);
     }
 }

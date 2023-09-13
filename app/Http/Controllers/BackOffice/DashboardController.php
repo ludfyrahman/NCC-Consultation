@@ -4,8 +4,10 @@ namespace App\Http\Controllers\BackOffice;
 
 use App\Http\Controllers\BackOffice\Services\SummaryService;
 use App\Http\Controllers\Controller;
-use App\Models\Customer;
-use App\Models\Sale;
+use App\Models\User;
+use App\Models\Recipe;
+use App\Models\Category;
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 use Auth;
@@ -25,10 +27,28 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         //
-        $summary = $this->service->getSummary($request);
-        // return $summary;
-        $customers = Customer::orderBy('id', 'desc')->get();
-        return view('pages.backoffice.dashboard.index', compact('summary', 'customers'));
+        // $summary = $this->service->getSummary($request);
+        $summary =(object) [
+            'saleToday' => 0,
+            'saleTodayBefore' => 0,
+            'purchaseToday' => 0,
+            'purchaseTodayBefore' => 0,
+            'saleMonth' => 0,
+            'saleMonthBefore' => 0,
+            'purchaseMonth' => 0,
+            'purchaseMonthBefore' => 0,
+            'salesChart' => [],
+            'product' => 0,
+            'service' => 0,
+            'sales' => [],
+            'purchaseChart' => [],
+
+        ];
+        $category  = Category::all();
+        $article = Article::all();
+        $recipe = Recipe::all();
+        $users = User::all();
+        return view('pages.backoffice.dashboard.index', compact('article', 'summary', 'category', 'recipe', 'users'));
     }
 
     /**

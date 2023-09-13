@@ -1,37 +1,47 @@
-<header class="edu-header  header-sticky header-transparent header-style-2 header-default">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-4 col-xl-3 col-md-6 col-6">
-                <div class="logo">
-                    <a href="index.html">
-                        <img class="logo-light" src="{{ asset($profiles->logo) }}" alt="Site Logo">
-                    </a>
-                </div>
-            </div>
 
-            <div class="col-lg-6 d-none d-xl-block">
-                <nav class="mainmenu-nav d-none d-lg-block">
-                    <ul class="mainmenu">
-                        <li><a href="#header">Home</a>
-                        <li><a href="#about">About</a>
-                        <li><a href="#sosmed">Sosial Media</a>
-                        <li><a href="#product">Product</a>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="col-lg-8 col-xl-3 col-md-6 col-6">
-                <div class="header-right d-flex justify-content-end">
-                    <div class="header-menu-bar">
-                        <div class="quote-icon quote-user d-none d-md-block ml--15 ml_sm--5">
-                            <a class="edu-btn btn-medium header-purchase-btn" href="{{ url('/login') }}" target="_blank">Masuk Ke Aplikasi</a>
+<div class="as-menu-wrapper">
+    <div class="as-menu-area text-center"><button class="as-menu-toggle"><i class="fal fa-times"></i></button>
+        <div class="mobile-logo"><a href="index.html"><img src="fe_assets/img/logo.svg" alt="Acadu"></a></div>
+        <div class="as-mobile-menu">
+            <ul>
+                <li><a href="{{url('/')}}">Beranda</a></li>
+                <li><a href="{{route('profileSchool')}}">Profil</a></li>
+                <li><a href="{{route('programs')}}">Program Keahlian</a></li>
+                <li><a href="{{route('teachers')}}">Guru</a></li>
+                <li><a href="{{route('works')}}">Bursa Kerja</a></li>
+                <li><a href="{{url('/')}}">Blog</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<header class="as-header header-layout1">
+    <div class="sticky-wrapper">
+        <div class="sticky-active">
+            <div class="menu-area">
+                <div class="container">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto">
+                            <div class="header-logo"><a href="index.html">
+                                <img src="fe_assets/img/logo.svg" class="d-none"
+                                        alt="Acadu"></a></div>
                         </div>
-                    </div>
-                    <div class="mobile-menu-bar ml--15 ml_sm--5 d-block d-xl-none">
-                        <div class="hamberger">
-                            <button class="white-box-icon hamberger-button">
-                                <i class="ri-menu-line"></i>
-                            </button>
+                        <div class="col-auto">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <nav class="main-menu d-none d-lg-inline-block">
+                                        <ul>
+                                            <li><a href="{{url('/')}}">Beranda</a></li>
+                                            <li><a href="{{route('profileSchool')}}">Profil</a></li>
+                                            <li><a href="{{route('programs')}}">Program Keahlian</a></li>
+                                            <li><a href="{{route('teachers')}}">Guru</a></li>
+                                            <li><a href="{{route('works')}}">Bursa Kerja</a></li>
+                                            <li><a href="{{url('/')}}">Blog</a></li>
+
+                                        </ul>
+                                    </nav><button type="button" class="as-menu-toggle d-inline-block d-lg-none"><i
+                                            class="far fa-bars"></i></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -16,12 +16,7 @@ class UserController extends Controller
     public function index()
     {
 
-        $data = [];
-        if (auth()->user()->role == 'Super Admin') {
-            $data = User::all();
-        } else {
-            $data = User::where('status', 'Aktif')->get();
-        }
+        $data = User::all();
 
         return view('pages.backoffice.user.index', compact('data'));
     }
@@ -49,15 +44,14 @@ class UserController extends Controller
             'username' => 'required',
             'password' => 'required',
             'role' => 'required',
-            'status' => 'required',
         ]);
 
         try {
             User::create([
                 'username' => $request->username,
                 'role' => $request->role,
-                'status' => $request->status,
                 'email' => $request->email,
+                'phone' => $request->phone,
                 'password' => bcrypt($request->password),
             ]);
             return redirect('user')->with('success', 'Berhasil menambah data!');
@@ -102,13 +96,12 @@ class UserController extends Controller
         $request->validate([
             'username' => 'required',
             'role' => 'required',
-            'status' => 'required',
         ]);
         try {
             $user = ([
                 'username' => $request->username,
                 'role' => $request->role,
-                'status' => $request->status,
+                'phone' => $request->phone,
                 'email' => $request->email,
 
             ]);
@@ -119,7 +112,7 @@ class UserController extends Controller
             User::where('id', $id)->update($user);
             return redirect('user')->with('success', 'Berhasil mengubah data!');
         } catch (\Throwable $th) {
-            return back()->with('failed', 'Gagal mengubah data!');
+            return back()->with('failed', 'Gagal mengubah data!'.$th->getMessage());
         }
     }
 
