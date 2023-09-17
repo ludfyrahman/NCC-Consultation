@@ -15,8 +15,9 @@ class SiteController extends Controller
      */
     public function index()
     {
-        $title = 'HomePage | SMK';
-        return view('pages.frontend.index', compact('title'));
+        $title = 'HomePage | NCC';
+        $recipe = Recipe::orderBy('created_at', 'desc')->limit(3)->get();
+        return view('pages.frontend.index', compact('title', 'recipe'));
     }
     public function recipe(){
         $data = Recipe::all();
@@ -35,7 +36,6 @@ class SiteController extends Controller
         return view('pages.frontend.consultation.create', compact('title', 'consultan'));
     }
     public function reservation(Request $request){
-        // dd($request->toArray());
         try {
             Consultation::create([
                 'user_id' => 2,
@@ -73,7 +73,7 @@ class SiteController extends Controller
     public function profile()
     {
         $profiles = SchoolProfile::first();
-        $title = 'Profil | SMK';
+        $title = 'Profil | NCC';
         return view('pages.frontend.profile.index', compact('profiles', 'title'));
     }
 
