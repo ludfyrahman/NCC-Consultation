@@ -29,12 +29,10 @@ Route::get('/resep/{id}', [SiteController::class, 'recipeDetail'])->name('resep.
 Route::get('/artikel', [SiteController::class, 'article'])->name('artikel');
 Route::get('/artikel/{id}', [SiteController::class, 'articleDetail'])->name('artikel.detail');
 Route::get('/konsultasi', [SiteController::class, 'consultation'])->name('konsultasi');
+Route::get('/konsultasi/{id}', [SiteController::class, 'consultationDetail'])->name('konsultasi.detail');
 Route::get('/tentang', [SiteController::class, 'about'])->name('tentang');
 Route::get('/createReservation', [SiteController::class, 'createReservation'])->name('createReservation');
 Route::post('/reservation', [SiteController::class, 'reservation'])->name('reservation');
-// Route::get('/programs', [SiteController::class, 'programs'])->name('programs');
-// Route::get('/teacher', [SiteController::class, 'teachers'])->name('teachers');
-// Route::get('/works', [SiteController::class, 'works'])->name('works');
 Route::middleware(['auth',  'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/profil', [UserController::class, 'profile'])->name('profile');

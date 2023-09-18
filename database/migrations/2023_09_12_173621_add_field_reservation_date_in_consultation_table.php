@@ -15,7 +15,7 @@ class AddFieldReservationDateInConsultationTable extends Migration
     {
         Schema::table('consultation', function (Blueprint $table) {
             //
-            $table->date('reservation_date')->after('status')->nullable();
+            $table->datetime('reservation_date')->after('status')->nullable();
         });
     }
 

@@ -12,7 +12,7 @@
                     <form class="form" method="POST" action="{{route('reservation')}}">
                         @csrf
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
+                            <div class="col-lg-4 col-md-6 col-12">
                                 <div class="form-group">
                                     <select name="consultant_id" id="" class="form-control">
                                         <option value="">Pilih Konsultan</option>
@@ -23,9 +23,14 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-6 col-md-6 col-12">
+                            <div class="col-lg-4 col-md-6 col-12">
                                 <div class="form-group">
                                     <input type="text" placeholder="Date" name="reservation_date" id="datepicker">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="form-group">
+                                    <input type="time" placeholder="Date" name="reservation_time" >
                                 </div>
                             </div>
 

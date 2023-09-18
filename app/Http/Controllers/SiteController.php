@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use App\Models\Recipe;
 use App\Models\Article;
 use App\Models\User;
+use App\Models\Chat;
 use App\Models\Consultation;
 
 class SiteController extends Controller
@@ -40,14 +41,21 @@ class SiteController extends Controller
             Consultation::create([
                 'user_id' => 2,
                 'consultant_id' => $request->consultant_id,
-                'reservation_date' => date('Y-m-d', strtotime($request->reservation_date)),
+                'reservation_date' => date('Y-m-d  H:i:s', strtotime(($request->reservation_date.' '.$request->reservation_time))),
             ]);
-            return redirect('createReservation')->with('success', 'Berhasil menambah data!');
+            return redirect('konsultasi')->with('success', 'Berhasil menambah data!');
         } catch (\Throwable $th) {
-            dd($th->getMessage());
             return back()->with('failed', 'Gagal menambah data!' . $th->getMessage());
         }
     }
+
+    public function consultationDetail($id){
+        $detail = Consultation::find($id);
+        $data = Chat::where('consultation_id', $id)->get();
+        $title = 'Chat | CC';
+        return view('pages.frontend.consultation.detail', compact('data', 'title', 'detail'));
+    }
+
     public function recipeDetail($id){
         $data = Recipe::find($id);
         $title = $data->name.' | CC';
