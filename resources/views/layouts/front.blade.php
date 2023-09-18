@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="{{ asset('fe_assets/css/app.min.css')}}">
     <link rel="stylesheet" href="{{ asset('fe_assets/css/fontawesome.min.css')}}">
     <link rel="stylesheet" href="{{ asset('fe_assets/css/style.css')}}">
+    <script src="{{asset('fe_assets/js/jquery.min.js')}}"></script>
 </head>
 <body>
     <div class="preloader">
@@ -84,7 +85,7 @@
 
     <script data-cfasync="false"
         src="https://wpthemesgrid.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="{{asset('fe_assets/js/jquery.min.js')}}"></script>
+
 
     <script src="{{asset('fe_assets/js/jquery-migrate-3.0.0.js')}}"></script>
 

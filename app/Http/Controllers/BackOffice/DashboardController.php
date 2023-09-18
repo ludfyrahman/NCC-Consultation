@@ -27,7 +27,7 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         //
-        if(auth()->user()->role != 'Admin'){
+        if(auth()->user()->role != 'Super Admin'){
             return redirect('/');
         }
         $summary =(object) [

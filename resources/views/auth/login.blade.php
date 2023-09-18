@@ -26,7 +26,7 @@
                             </div>
                             <div class="card-sigin">
                                 <div class="main-signup-header">
-                                    <h2>Selamat Data di MyMealPlan</h2>
+                                    <h2>Selamat Data di NCC</h2>
                                     <h5 class="fw-semibold mb-4">Please sign in to continue.</h5>
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf

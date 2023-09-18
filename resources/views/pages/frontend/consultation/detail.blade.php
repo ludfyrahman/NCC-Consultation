@@ -31,11 +31,46 @@
 
     <!-- Footer -->
     <div class="bottom">
-        <form>
         <input type="text" id="message" name="message" placeholder="Enter message..." autocomplete="off">
-        <button type="submit"></button>
-        </form>
+        <button type="submit" id="submit"></button>
     </div>
     <!-- End Footer -->
 </div>
+<script>
+    $(function(){
+
+        setTimeout(() => {
+            reload();
+        }, 1000);
+        $('#submit').click(function(){
+            var val = $('#message').val();
+            if(val != ''){
+                $.ajax({
+                    url: "{{route('consultation.send')}}",
+                    type: "POST",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        message: val,
+                        id: "{{$id}}"
+                    },
+                    success: function(data){
+                        $('#message').val('');
+                        $('.messages').append(data);
+                        reload();
+                    }
+                })
+            }
+        })
+
+        function reload(){
+            $.ajax({
+                url: "{{route('chat', $id)}}",
+                type: "GET",
+                success: function(data){
+                    $('.messages').html(data);
+                }
+            })
+        }
+    })
+</script>
 @endsection

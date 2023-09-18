@@ -33,6 +33,7 @@ Route::get('/konsultasi/{id}', [SiteController::class, 'consultationDetail'])->n
 Route::get('/tentang', [SiteController::class, 'about'])->name('tentang');
 Route::get('/createReservation', [SiteController::class, 'createReservation'])->name('createReservation');
 Route::post('/reservation', [SiteController::class, 'reservation'])->name('reservation');
+Route::post('/send', [SiteController::class, 'send'])->name('consultation.send');
 Route::get('/getChat/{id}', [SiteController::class, 'chat'])->name('chat');
 Route::middleware(['auth',  'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

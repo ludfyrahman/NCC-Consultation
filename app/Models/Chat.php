@@ -9,7 +9,11 @@ class Chat extends Model
 {
     use HasFactory;
     protected $table = 'chat';
-
+    protected $fillable = [
+        'consultation_id',
+        'user_id',
+        'message',
+    ];
     public function consultation()
     {
         return $this->belongsTo(Consultation::class);

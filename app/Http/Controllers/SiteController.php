@@ -31,14 +31,34 @@ class SiteController extends Controller
     public function chat($id){
         $user_id = auth()->user()->id;
         $data = Chat::where('consultation_id', $id)->get();
+        $result = '';
         foreach ($data as $key => $chat) {
             if($chat->user_id == $user_id){
                 $data[$key]->type = 'right';
+                $result .= '<div class="right message">
+                    <p>'.$chat->message.'</p>
+                    <img src="https://cdn.vectorstock.com/i/preview-1x/33/51/person-gray-photo-placeholder-little-boy-vector-22863351.jpg" style="width:4%!important" alt="Avatar">
+                </div>
+                ';
             }else{
                 $data[$key]->type = 'left';
+                $result.= '<div class="left message">
+                <img src="https://cdn.vectorstock.com/i/preview-1x/33/51/person-gray-photo-placeholder-little-boy-vector-22863351.jpg" style="width:4%!important" alt="Avatar">
+                    <p>'.$chat->message.'</p>
+                </div>
+                ';
             }
         }
-        return response()->json($data);
+
+        // @foreach ($data as $d)
+        //     @if($d->type == 'left')
+        //         @include('includes.receive', ['message' => $d->message])
+        //     @else
+        //         @include('includes.broadcast', ['message' => $d->message])
+        //     @endif
+        // @endforeach
+        return $result;
+        // return response()->json($data);
     }
 
     public function consultation(){
@@ -84,9 +104,23 @@ class SiteController extends Controller
             }
         }
         $title = 'Chat | CC';
-        return view('pages.frontend.consultation.detail', compact('data', 'title', 'detail'));
+        return view('pages.frontend.consultation.detail', compact('data', 'title', 'detail', 'id'));
     }
 
+    public function send(Request $request){
+        $consultation_id = $request->id;
+        $user_id = auth()->user()->id;
+        try {
+            Chat::create([
+                'consultation_id' => $consultation_id,
+                'user_id' => $user_id,
+                'message' => $request->message,
+            ]);
+            return response()->json(['status' => 'success']);
+        } catch (\Throwable $th) {
+            return response()->json(['status' => 'failed', 'message' => $th->getMessage()]);
+        }
+    }
     public function recipeDetail($id){
         $data = Recipe::find($id);
         $title = $data->name.' | CC';
