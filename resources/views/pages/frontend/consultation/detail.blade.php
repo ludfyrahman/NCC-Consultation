@@ -39,8 +39,9 @@
 <script>
     $(function(){
 
-        setTimeout(() => {
+        setInterval(() => {
             reload();
+            console.log('reload')
         }, 1000);
         $('#submit').click(function(){
             var val = $('#message').val();
