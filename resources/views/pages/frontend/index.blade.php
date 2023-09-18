@@ -308,7 +308,11 @@
                 </div>
             </div>
         </div>
+        @if(count($recipe) == 0)
+            <h5 class="text-center text-secondary">Data Resep Kosong</h5>
+        @endif
         <div class="row">
+
             @foreach ($recipe as $data)
             <div class="col-lg-4 col-md-6 col-12">
                 <a href="{{route('resep.detail', $data->id)}}">

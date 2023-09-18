@@ -26,7 +26,9 @@
 
 <section class="blog grid section">
     <div class="container">
-
+        @if(count($data) == 0)
+            <h5 class="text-center text-secondary">Data Artikel Kosong</h5>
+        @endif
         <div class="row">
             <div class="col-lg-12 col-12">
                 <div class="row">

@@ -27,10 +27,13 @@
 <section class="blog grid section">
     <div class="container">
         <h4>Resep sehat terbaru</h4>
+        @if(count($latest) == 0)
+            <h5 class="text-center text-secondary">Data Resep Kosong</h5>
+        @endif
         <div class="row">
             <div class="col-lg-12 col-12">
                 <div class="row">
-                    @foreach ($data as $d)
+                    @foreach ($latest as $d)
                     <div class="col-lg-4 col-md-4 col-12">
                         <a href="{{route('resep.detail', $d->id)}}">
                             <div class="single-news">
@@ -53,6 +56,7 @@
                     </div>
 
                     @endforeach
+
                     {{-- <div class="col-12">
 
                         <div class="pagination">
@@ -71,6 +75,9 @@
 
         </div>
         <h4 class="mt-2">Semua Resep</h4>
+        @if(count($data) == 0)
+            <h5 class="text-center text-secondary">Data Resep Kosong</h5>
+        @endif
         <div class="row">
             <div class="col-lg-12 col-12">
                 <div class="row">

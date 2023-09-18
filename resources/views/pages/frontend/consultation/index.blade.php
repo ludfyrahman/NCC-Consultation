@@ -15,6 +15,9 @@
                 {{ session('success') }}
             </div>
         @endif
+        @if(count($data) == 0)
+            <h5 class="text-center text-secondary">Data Konsultasi Kosong</h5>
+        @endif
         @foreach ($data as $d)
         <a href="{{route('konsultasi.detail', $d->id)}}">
             <div class="card">
