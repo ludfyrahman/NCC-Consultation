@@ -62,7 +62,19 @@
                     </div>
                     <div class="col-lg-2 col-12">
                         <div class="get-quote">
-                            <a href="{{route('konsultasi')}}" class="btn"> Konsultasi</a>
+                            @if (auth()->check())
+                            <a href="#">{{auth()->user()->username}}</a>
+                            <button type="button" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();" class="btn"> Keluar</button>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                @csrf
+
+                            </form>
+
+                            @else
+                            <a href="{{route('login')}}" class="btn"> Masuk</a>
+                            @endif
                         </div>
                     </div>
                 </div>

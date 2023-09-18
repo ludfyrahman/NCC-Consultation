@@ -27,7 +27,9 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         //
-        // $summary = $this->service->getSummary($request);
+        if(auth()->user()->role != 'Admin'){
+            return redirect('/');
+        }
         $summary =(object) [
             'saleToday' => 0,
             'saleTodayBefore' => 0,

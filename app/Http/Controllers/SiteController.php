@@ -26,9 +26,32 @@ class SiteController extends Controller
         $title = 'Resep | CC';
         return view('pages.frontend.recipe.index', compact('data', 'title', 'latest'));
     }
+
+
+    public function chat($id){
+        $user_id = auth()->user()->id;
+        $data = Chat::where('consultation_id', $id)->get();
+        foreach ($data as $key => $chat) {
+            if($chat->user_id == $user_id){
+                $data[$key]->type = 'right';
+            }else{
+                $data[$key]->type = 'left';
+            }
+        }
+        return response()->json($data);
+    }
+
     public function consultation(){
         $title = 'Konsultasi | CC';
-        $data = Consultation::all();
+        if(auth()->check()){
+            if(auth()->user()->role == 'Konsultan'){
+                $data = Consultation::where('consultant_id', auth()->user()->id)->get();
+            }else{
+                $data = Consultation::where('user_id', auth()->user()->id)->get();
+            }
+        }else{
+            $data = [];
+        }
         return view('pages.frontend.consultation.index', compact('title', 'data'));
     }
     public function createReservation(){
@@ -39,7 +62,7 @@ class SiteController extends Controller
     public function reservation(Request $request){
         try {
             Consultation::create([
-                'user_id' => 2,
+                'user_id' => auth()->user()->id,
                 'consultant_id' => $request->consultant_id,
                 'reservation_date' => date('Y-m-d  H:i:s', strtotime(($request->reservation_date.' '.$request->reservation_time))),
             ]);
@@ -51,7 +74,15 @@ class SiteController extends Controller
 
     public function consultationDetail($id){
         $detail = Consultation::find($id);
+        $user_id = auth()->user()->id;
         $data = Chat::where('consultation_id', $id)->get();
+        foreach ($data as $key => $chat) {
+            if($chat->user_id == $user_id){
+                $data[$key]->type = 'right';
+            }else{
+                $data[$key]->type = 'left';
+            }
+        }
         $title = 'Chat | CC';
         return view('pages.frontend.consultation.detail', compact('data', 'title', 'detail'));
     }

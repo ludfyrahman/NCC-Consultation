@@ -6,7 +6,12 @@
     <div class="container">
         <h3>Konsultasi</h3>
         <p>Lihat dan kelola konsultasimu disini</p>
+        {{-- validate session login or not --}}
+        @if (auth()->check() && auth()->user()->role == 'User')
+
         <a href="{{route('createReservation')}}"><button class="btn btn-primary float-end" >Tambah Reservasi</button></a>
+
+        @endif
         @if (session('success'))
             <div class="alert alert-success mg-b-0" role="alert">
                 <button aria-label="Close" class="close" data-bs-dismiss="alert" type="button">
@@ -28,7 +33,12 @@
                             <h3>{{date('M', strtotime($d->reservation_date))}}</h3>
                         </div>
                         <div class="col-4">
-                            <h4>{{$d->consultant->username}}</h4>
+                            @if (auth()->check() && auth()->user()->role == 'User')
+                            <h4>{{$d->consultant?->username}}</h4>
+                            @else
+                            <h4>{{$d->user?->username}}</h4>
+                            @endif
+
                             <p>Selamat pagi ada yang bisa dibantu?</p>
                         </div>
                     </div>

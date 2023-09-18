@@ -26,6 +26,16 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function getRedirectRoute()
+    {
+        return match((int)$this->role) {
+            'Admin' => 'dashboard',
+            'Konsultan' => 'home',
+            'User' => 'home',
+            // ...
+        };
+    }
+
     public function user()
     {
         return $this->hasMany(Employee::class);

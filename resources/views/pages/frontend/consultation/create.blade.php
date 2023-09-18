@@ -39,7 +39,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <div class="button">
-                                        <button type="submit" class="btn">Book An Appointment</button>
+                                        <button type="submit" class="btn">Simpan</button>
                                     </div>
                                 </div>
                             </div>

@@ -7,7 +7,11 @@
     <div class="top">
         <img src="https://cdn.vectorstock.com/i/preview-1x/33/51/person-gray-photo-placeholder-little-boy-vector-22863351.jpg" alt="Avatar" style="width:5%!important">
         <div>
-        <p>{{$detail->consultant->username}}</p>
+        @if (auth()->user()->role == 'User')
+            <p>{{$detail->consultant->username}}</p>
+        @else
+            <p>{{$detail->user->username}}</p>
+        @endif
         <small>Online</small>
         </div>
     </div>
@@ -15,8 +19,13 @@
 
     <!-- Chat -->
     <div class="messages">
-        @include('includes.receive', ['message' => "Hey! What's up!  👋"])
-        @include('includes.receive', ['message' => "Ask a friend to open this link and you can chat with them!"])
+        @foreach ($data as $d)
+            @if($d->type == 'left')
+                @include('includes.receive', ['message' => $d->message])
+            @else
+                @include('includes.broadcast', ['message' => $d->message])
+            @endif
+        @endforeach
     </div>
     <!-- End Chat -->
 
@@ -28,6 +37,5 @@
         </form>
     </div>
     <!-- End Footer -->
-
 </div>
 @endsection
