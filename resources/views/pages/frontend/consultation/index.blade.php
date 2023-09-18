@@ -34,9 +34,9 @@
                         </div>
                         <div class="col-4">
                             @if (auth()->check() && auth()->user()->role == 'User')
-                            <h4>{{$d->consultant?->username}}</h4>
+                            <h4>{{$d->consultant->username}}</h4>
                             @else
-                            <h4>{{$d->user?->username}}</h4>
+                            <h4>{{$d->user->username}}</h4>
                             @endif
 
                             <p>Selamat pagi ada yang bisa dibantu?</p>
