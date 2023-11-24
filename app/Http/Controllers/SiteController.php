@@ -27,7 +27,14 @@ class SiteController extends Controller
         return view('pages.frontend.recipe.index', compact('data', 'title', 'latest'));
     }
 
+    public function testing(){
+        $title = 'Testing | CC';
+        return view('pages.frontend.testing.index', compact('title'));
+    }
 
+    public function testingSend(Request $request){
+        dd($request->toArray());
+    }
     public function chat($id){
         $user_id = auth()->user()->id;
         $data = Chat::where('consultation_id', $id)->get();

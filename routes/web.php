@@ -24,6 +24,8 @@ use App\Models\Voucher;
 |
 */
 Route::get('/', [SiteController::class, 'index'])->name('home');
+Route::get('/testing', [SiteController::class, 'testing'])->name('testing');
+Route::post('/testingSend', [SiteController::class, 'testingSend'])->name('testingSend');
 Route::get('/resep', [SiteController::class, 'recipe'])->name('resep');
 Route::get('/resep/{id}', [SiteController::class, 'recipeDetail'])->name('resep.detail');
 Route::get('/artikel', [SiteController::class, 'article'])->name('artikel');
