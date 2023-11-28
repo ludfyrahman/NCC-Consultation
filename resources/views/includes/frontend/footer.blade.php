@@ -2,12 +2,26 @@
 
     <div class="footer-top">
         <div class="container">
-            <div class="row">
+            <div class="row single-footer mb-5">
+                <div class="col-md-8">
+                    <h2>Dapatkan informasi gizi terbaru</h2>
+                    <p>Kami akan kirim informasi gizi terbaik sekali dalam seminggu, tidak spam!</p>
+                </div>
+                <div class="col-md-4">
+                    <form action="https://wpthemesgrid.com/themes/mediplus/mail/mail.php" method="get"
+                    class="newsletter-inner">
+                        <input name="email" placeholder="Email Address" class="common-input"
+                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'"
+                            required type="email">
+                        <button class="button"><i class="icofont icofont-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-5">
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="single-footer">
-                        <h2>About Us</h2>
-                        <p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut
-                            labore dolore magna.</p>
+                        <h2>Nutrition Care Center</h2>
+                        <p>Nutrisi Berkualitas, Kesehatan Berkelanjutan.</p>
 
                         <ul class="social">
                             <li><a href="#"><i class="icofont-facebook"></i></a></li>
@@ -21,63 +35,47 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="single-footer f-link">
-                        <h2>Quick Links</h2>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our
-                                            Cases</a></li>
-                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Other
-                                            Links</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-caret-right"
-                                                aria-hidden="true"></i>Consuling</a></li>
-                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Finance</a>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-caret-right"
-                                                aria-hidden="true"></i>Testimonials</a></li>
-                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a></li>
-                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact
-                                            Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <div class="single-footer">
-                        <h2>Open Hours</h2>
-                        <p>Lorem ipsum dolor sit ame consectetur adipisicing elit do eiusmod tempor incididunt.</p>
-                        <ul class="time-sidual">
-                            <li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
-                            <li class="day">Saturday <span>9.00-18.30</span></li>
-                            <li class="day">Monday - Thusday <span>9.00-15.00</span></li>
+                        <h2>Menu</h2>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Beranda</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Resep Sehat</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Artikel</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Kalkulator BMI</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-12">
-                    <div class="single-footer">
-                        <h2>Newsletter</h2>
-                        <p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit
-                            amet, consectetur adipisicing elit,</p>
-                        <form action="https://wpthemesgrid.com/themes/mediplus/mail/mail.php" method="get"
-                            class="newsletter-inner">
-                            <input name="email" placeholder="Email Address" class="common-input"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'"
-                                required type="email">
-                            <button class="button"><i class="icofont icofont-paper-plane"></i></button>
-                        </form>
+                    <div class="single-footer f-link">
+                        <h2>Tentang Kami</h2>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Profil</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Visi,Misi</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Kontak</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Kebijakan Privasi</a></li>
+                        </ul>
                     </div>
                 </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer f-link">
+                        <h2>Bantuan</h2>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Jadwal Konselor Gizi</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Konsultasi Online</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Janji temu</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Daftar konselor gizi</a></li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

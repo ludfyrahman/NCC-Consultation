@@ -59,62 +59,29 @@
 
     </div>
 </section>
-
-
-<section class="schedule d-none">
+<section class="schedule ">
     <div class="container">
         <div class="schedule-inner">
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-12 ">
-
+                <div class="col-12 ">
                     <div class="single-schedule first">
                         <div class="inner">
                             <div class="icon">
                                 <i class="fa fa-ambulance"></i>
                             </div>
                             <div class="single-content">
-                                <span>Lorem Amet</span>
-                                <h4>Emergency Cases</h4>
-                                <p>Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus
-                                    convallis sodales.</p>
-                                <a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-
-                    <div class="single-schedule middle">
-                        <div class="inner">
-                            <div class="icon">
-                                <i class="icofont-prescription"></i>
-                            </div>
-                            <div class="single-content">
-                                <span>Fusce Porttitor</span>
-                                <h4>Doctors Timetable</h4>
-                                <p>Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus
-                                    convallis sodales.</p>
-                                <a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12 col-12">
-
-                    <div class="single-schedule last">
-                        <div class="inner">
-                            <div class="icon">
-                                <i class="icofont-ui-clock"></i>
-                            </div>
-                            <div class="single-content">
-                                <span>Donec luctus</span>
-                                <h4>Opening Hours</h4>
-                                <ul class="time-sidual">
-                                    <li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
-                                    <li class="day">Saturday <span>9.00-18.30</span></li>
-                                    <li class="day">Monday - Thusday <span>9.00-15.00</span></li>
-                                </ul>
-                                <a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
+                                <h4>Reservasi Online</h4>
+                                <form action="" method="post" class="row">
+                                    <div class="col-md-5">
+                                        <input type="date" class="form-control" placeholder="Tanggal">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control" placeholder="Konselor">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button class=" bg-success hover-not-dark btn tw-100">Reservasi</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -238,10 +205,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-12">
-
-                <div class="choose-right">
+                <div class="choose-right rounded">
                     <div class="video-image">
-
                         <div class="promo-video">
                             <div class="waves-block">
                                 <div class="waves wave-1"></div>
@@ -254,11 +219,10 @@
                             class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
                     </div>
                 </div>
-
             </div>
             <div class="col-lg-6 col-12">
-
                 <div class="choose-left">
+                    <span class="badge bg-warning text-white px-4 py-2 text-dark mb-2">KONSULTASI</span>
                     <h3>Konsultasikan Kesehatanmu Dengan Ahli Gizi Terpercaya Melalui Layanan Online Di NCC!</h3>
                     <p>Di Nutrition Care Center (NCC), kami mengembangkan program kesehatan yang memberikan peluang bagi Anda untuk menjadi lebih efisien dan fokus dalam mencapai tujuan kesehatan Anda. </p>
                     <div class="row">
@@ -276,8 +240,33 @@
                             </ul>
                         </div>
                     </div>
+                    <button class="btn bg-success w-100 mt-2">Konsultasi Sekarang</button>
                 </div>
 
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+<section class="why-choose section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <div class="choose-left">
+                    <span class="badge bg-warning text-white px-4 py-2 text-dark mb-2">RESERVASI ONLINE</span>
+                    <h3>Janji Temu yang Mudah di NCC!</h3>
+                    <p>Temukan kenyamanan dan kemudahan konsultasi gizi online di NCC. Dengan fitur janji temu online yang simpel, kamu dapat dengan mudah mengatur pertemuan langsung dengan ahli gizi terpercaya kami. Dapatkan bimbingan dan rekomendasi nutrisi yang sesuai dengan kebutuhanmu, tanpa harus keluar rumah. Jangan khawatir, kami siap membantu kamu mencapai tujuan kesehatanmu dengan penuh semangat dan dukungan.</p>
+                    <ul class="list">
+                        <li><i class="fa fa-check"></i>Konsultasi gizi online di NCC memberikan kemudahan akses melalui perangkatmu sendiri.</li>
+                        <li><i class="fa fa-check"></i>Dapatkan kenyamanan dan fleksibilitas dengan memilih waktu sesuai jadwalmu.</li>
+                        <li><i class="fa fa-check"></i>Ahli gizi terpercaya kami memberikan dukungan pribadi yang sesuai dengan kebutuhanmu.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="rounded bg-sky px-4 py-4">
+                    <img src="{{asset('fe_assets/img/chat.png')}}" alt="">
+                </div>
             </div>
         </div>
     </div>
@@ -290,8 +279,7 @@
             <div class="col-lg-12">
                 <div class="section-title">
                     <h2>Resep Sehat Terbaru</h2>
-                    <img src="{{asset('fe_assets/img/section-img.png')}}" alt="#">
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt adhuc persius.</p>
                 </div>
             </div>
         </div>
@@ -309,12 +297,13 @@
                         </div>
                         <div class="news-body">
                             <div class="news-content">
-                                <div class="date">{{$data->created_at->format('D M, Y')}}</div>
+                                <div>
+                                    @foreach ($data->category as $cat)
+                                        <span class="badge bg-info text-white">{{$cat->category->name}}</span>
+                                    @endforeach
+                                </div>
                                 <h2><a href="{{route('resep.detail', $data->id)}}">{{$data->name}}</a></h2>
-                                <p class="text">{{substr($d->description,0,50)}}</p>
-                                @foreach ($d->category as $cat)
-                                    <span class="badge bg-primary text-white">{{$cat->category->name}}</span>
-                                @endforeach
+
                             </div>
                         </div>
                     </div>

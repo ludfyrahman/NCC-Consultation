@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="{{ asset('fe_assets/css/app.min.css')}}">
     <link rel="stylesheet" href="{{ asset('fe_assets/css/fontawesome.min.css')}}">
     <link rel="stylesheet" href="{{ asset('fe_assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('fe_assets/css/custom.css')}}">
     <script src="{{asset('fe_assets/js/jquery.min.js')}}"></script>
 </head>
 <body>

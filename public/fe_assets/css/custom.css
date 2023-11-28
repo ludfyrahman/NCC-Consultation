@@ -1,0 +1,6 @@
+.bg-sky{
+    background-color: #EDF2FF;
+}
+.hover-not-dark:hover{
+    background-color: #fff!important;
+}
