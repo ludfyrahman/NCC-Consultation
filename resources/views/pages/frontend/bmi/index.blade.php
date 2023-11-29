@@ -41,6 +41,7 @@
                     <p>Utamakan hidup sehat dan perhatikan konsumsi harian</p>
                     <h4>BMI Kamu: <span id="bmi-value"></span> </h4>
                     <p id="result-description"></p>
+                    <button class="btn btn-success" id="reCheck">Cek Ulang</button>
                 </div>
             </div>
         </div>
@@ -97,7 +98,11 @@
             formBMI.hide();
             result.show();
             return false;
-        })
+        });
+        $('#reCheck').click(function(){
+            formBMI.show();
+            result.hide();
+        });
     });
 </script>
 @endpush
