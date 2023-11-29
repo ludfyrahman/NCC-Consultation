@@ -134,5 +134,6 @@
         integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg=="
         data-cf-beacon='{"rayId":"7ff18fba6ff53f88","version":"2023.8.0","r":1,"b":1,"token":"3248e93e0d6447329c4d6bcc351d5700","si":100}'
         crossorigin="anonymous"></script>
+    @stack('script')
 </body>
 </html>

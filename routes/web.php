@@ -11,6 +11,7 @@ use App\Http\Controllers\BackOffice\RecipeCategoryController;
 use App\Http\Controllers\BackOffice\ArticleController;
 use App\Http\Controllers\BackOffice\RecipeController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\BMIControllers;
 use App\Models\Voucher;
 
 /*
@@ -24,8 +25,6 @@ use App\Models\Voucher;
 |
 */
 Route::get('/', [SiteController::class, 'index'])->name('home');
-Route::get('/testing', [SiteController::class, 'testing'])->name('testing');
-Route::post('/testingSend', [SiteController::class, 'testingSend'])->name('testingSend');
 Route::get('/resep', [SiteController::class, 'recipe'])->name('resep');
 Route::get('/resep/{id}', [SiteController::class, 'recipeDetail'])->name('resep.detail');
 Route::get('/artikel', [SiteController::class, 'article'])->name('artikel');
@@ -38,6 +37,9 @@ Route::post('/reservation', [SiteController::class, 'reservation'])->name('reser
 Route::post('/send', [SiteController::class, 'send'])->name('consultation.send');
 Route::get('/getChat/{id}', [SiteController::class, 'chat'])->name('chat');
 Route::middleware(['auth',  'verified'])->group(function () {
+    // bmi
+    Route::get('/bmi', [BMIControllers::class, 'index'])->name('bmi');
+    // voucher
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/profil', [UserController::class, 'profile'])->name('profile');
     Route::post('/profil', [UserController::class, 'updateProfile']);

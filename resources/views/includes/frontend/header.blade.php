@@ -54,6 +54,7 @@
                                     <li><a href="{{ route('artikel') }}">Artikel </a></li>
                                     <li><a href="{{ route('tentang') }}">Profil</a></li>
                                     <li><a href="{{ route('konsultasi') }}">Konsultasi </a></li>
+                                    <li><a href="{{ route('bmi') }}">Cek BMI </a></li>
 
                                 </ul>
                             </nav>

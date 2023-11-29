@@ -43,7 +43,7 @@
                             </li>
                             <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Artikel</a>
                             </li>
-                            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Kalkulator BMI</a></li>
+                            <li><a href="{{route('bmi')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Kalkulator BMI</a></li>
                         </ul>
                     </div>
                 </div>
