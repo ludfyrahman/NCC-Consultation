@@ -64,12 +64,21 @@
         result.hide();
         $('#formBMI').submit(function(){
             var gender = $('[name=gender]:checked').val();
-            $('#gender-result').text(gender ? 'Laki laki' : 'Perempuan')
-            $('#gender-image').attr('src', gender ? $('#male-image').attr('src') : $('#female-image').attr('src'));
+            $('#gender-result').text(gender == 1 ? 'Laki laki' : 'Perempuan')
+            $('#gender-image').attr('src', gender == 1 ? $('#male-image').attr('src') : $('#female-image').attr('src'));
             var bb = $('[name=bb]').val();
             var tb = $('[name=tb]').val();
-            // rumus bmi
-            var bmi = bb / (tb/100 * tb/100);
+
+            if(bb == '' || tb == ''){
+                alert('Berat badan dan tinggi badan tidak boleh kosong');
+                return false;
+            }
+            if(gender == ''){
+                alert('Jenis kelamin tidak boleh kosong');
+                return false;
+            }
+            // menghitung bmi
+            var bmi = bb / ((tb/100)*(tb/100));
             // menentukan kategori bmi
             var kategori = '';
             var kategori_warna = 'success';
