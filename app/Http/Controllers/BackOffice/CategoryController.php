@@ -45,7 +45,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'      => 'required',
+            'name'      => 'required|unique:category,name',
         ]);
         try {
             Category::create([
@@ -53,6 +53,7 @@ class CategoryController extends Controller
             ]);
             return redirect('category')->with('success', 'Berhasil menambah data!');
         } catch (\Throwable $th) {
+            // send error to sentry
             return back()->with('failed', 'Gagal menambah data!' . $th->getMessage());
         }
     }
